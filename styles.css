@@ -88,7 +88,7 @@ body {
 }
 
 .nav-link:hover {
-    opacity: 0.7;
+    color: var(--yellow);
 }
 
 .mobile-menu-btn {
@@ -1267,7 +1267,7 @@ body {
 }
 
 .footer-link:hover {
-    color: white;
+    color: var(--yellow);
 }
 
 .footer-contacts {
@@ -1406,7 +1406,7 @@ body {
     }
 
     .hero {
-        padding: 4rem 1rem 1rem;
+        padding: 5rem 1rem 1rem;
     }
 
     .section-title {
