@@ -474,7 +474,7 @@ class ContactFormTester:
     
     def run_all_tests(self):
         """Run all tests and return summary"""
-        print("🚀 Starting Contact Form API Tests...")
+        print("🚀 Starting Comprehensive Contact Form API Tests...")
         print(f"Testing against: {API_BASE}")
         
         test_results = {}
@@ -506,6 +506,18 @@ class ContactFormTester:
         # Email Functionality
         email_success = self.test_email_functionality()
         test_results['email_functionality'] = email_success
+        
+        # Google Sheets Integration
+        sheets_success = self.test_google_sheets_integration()
+        test_results['google_sheets_integration'] = sheets_success
+        
+        # CSV File Verification
+        csv_success = self.test_csv_file_verification()
+        test_results['csv_file_verification'] = csv_success
+        
+        # End-to-End Multiple Submissions
+        e2e_success = self.test_end_to_end_multiple_submissions()
+        test_results['end_to_end_multiple_submissions'] = e2e_success
         
         # Error Handling
         error_handling_success = self.test_error_handling()
