@@ -1565,7 +1565,7 @@ html {
     gap: 1.5rem;
 }
 
-.form-row {
+.form-group-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -1613,7 +1613,7 @@ html {
     min-height: 6rem;
 }
 
-.contact-submit-btn {
+.form-submit {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: 0.75rem;
@@ -1630,22 +1630,22 @@ html {
     transition: all 0.3s;
 }
 
-.contact-submit-btn:hover {
+.form-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(248, 208, 65, 0.3);
 }
 
-.contact-submit-btn:active {
+.form-submit:active {
     transform: translateY(0);
 }
 
-.contact-submit-btn:disabled {
+.form-submit:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
 }
 
-.contact-submit-btn i {
+.form-submit i {
     width: 1.25rem;
     height: 1.25rem;
 }
@@ -1692,7 +1692,7 @@ html {
         padding: 3rem 0;
     }
     
-    .form-row {
+    .form-group-container {
         grid-template-columns: 1fr;
     }
     
