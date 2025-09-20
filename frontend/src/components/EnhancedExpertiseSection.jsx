@@ -1,5 +1,5 @@
 import React from "react";
-import { Snowflake, Package, ShieldCheck, Thermometer, Truck, Monitor, Pills, Heart, Stethoscope, Activity, Pill, Tablet } from "lucide-react";
+import { Snowflake, Package, ShieldCheck, Thermometer, Truck, Monitor, Pill, Heart, Stethoscope, Activity, Tablet, Capsule } from "lucide-react";
 
 const EnhancedExpertiseSection = () => {
   const coldChainFeatures = [
