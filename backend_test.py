@@ -450,7 +450,7 @@ class ContactFormTester:
             time.sleep(3)
             
             # Verify database storage for all submissions
-            if self.db:
+            if self.db is not None:
                 stored_count = 0
                 for submission_id in submitted_ids:
                     contact_form = self.db.contact_forms.find_one({"id": submission_id})
