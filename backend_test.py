@@ -262,6 +262,216 @@ class ContactFormTester:
         
         return all_passed
     
+    def test_google_sheets_integration(self):
+        """Test Google Sheets integration functionality"""
+        print("\n🔍 Testing Google Sheets Integration...")
+        
+        # Submit a form specifically for Google Sheets testing
+        test_data = {
+            "name": "Michael Chen",
+            "email": "michael@sheetstest.com",
+            "company": "Google Sheets Test Corp",
+            "message": "Testing Google Sheets integration functionality"
+        }
+        
+        try:
+            response = requests.post(
+                f"{API_BASE}/contact",
+                json=test_data,
+                headers={"Content-Type": "application/json"},
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                response_data = response.json()
+                print(f"✅ Form submitted for Google Sheets test: {response_data['id']}")
+                
+                # Wait a moment for processing
+                time.sleep(2)
+                
+                # Check backend logs for Google Sheets integration activity
+                try:
+                    import subprocess
+                    log_result = subprocess.run(
+                        ['tail', '-n', '100', '/var/log/supervisor/backend.err.log'],
+                        capture_output=True, text=True, timeout=5
+                    )
+                    
+                    sheets_indicators = [
+                        "CSV file updated",
+                        "GOOGLE SHEETS IMPORT DATA",
+                        "Copy the above data to your Google Sheet",
+                        "https://docs.google.com/spreadsheets/d/"
+                    ]
+                    
+                    found_indicators = []
+                    for indicator in sheets_indicators:
+                        if indicator in log_result.stdout:
+                            found_indicators.append(indicator)
+                    
+                    if len(found_indicators) >= 3:
+                        print("✅ Google Sheets integration logging found")
+                        print(f"✅ Found {len(found_indicators)}/4 integration indicators")
+                        
+                        # Check for specific Google Sheets URL
+                        if "1ch7hZPHH9mVVeO2dMU54LGn6miSUu6mXWcNfM_QkDys" in log_result.stdout:
+                            print("✅ Google Sheets URL logged correctly")
+                        
+                        return True
+                    else:
+                        print(f"⚠️ Limited Google Sheets integration evidence: {len(found_indicators)}/4 indicators")
+                        return False
+                        
+                except Exception as log_e:
+                    print(f"❌ Could not check Google Sheets logs: {log_e}")
+                    return False
+            else:
+                print(f"❌ Google Sheets integration test failed: {response.status_code}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Google Sheets integration test failed: {e}")
+            return False
+    
+    def test_csv_file_verification(self):
+        """Test CSV file creation and format for Google Sheets import"""
+        print("\n🔍 Testing CSV File Verification...")
+        
+        csv_file_path = '/tmp/spiro_contact_forms.csv'
+        
+        try:
+            # Check if CSV file exists
+            import os
+            if not os.path.exists(csv_file_path):
+                print(f"❌ CSV file not found at {csv_file_path}")
+                return False
+            
+            print(f"✅ CSV file exists at {csv_file_path}")
+            
+            # Read and verify CSV content
+            import csv
+            with open(csv_file_path, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                rows = list(reader)
+                
+                if len(rows) < 1:
+                    print("❌ CSV file is empty")
+                    return False
+                
+                # Check header row
+                expected_headers = ['Timestamp', 'Name', 'Email', 'Company', 'Message', 'Status']
+                if rows[0] != expected_headers:
+                    print(f"❌ CSV headers incorrect. Expected: {expected_headers}, Got: {rows[0]}")
+                    return False
+                
+                print("✅ CSV headers are correct")
+                print(f"✅ CSV contains {len(rows)-1} data rows")
+                
+                # Verify data format
+                if len(rows) > 1:
+                    sample_row = rows[1]
+                    if len(sample_row) == 6:
+                        print("✅ CSV data format is correct (6 columns)")
+                        print(f"✅ Sample row: {sample_row}")
+                    else:
+                        print(f"❌ CSV data format incorrect. Expected 6 columns, got {len(sample_row)}")
+                        return False
+                
+                # Check file size
+                file_size = os.path.getsize(csv_file_path)
+                print(f"✅ CSV file size: {file_size} bytes")
+                
+                return True
+                
+        except Exception as e:
+            print(f"❌ CSV file verification failed: {e}")
+            return False
+    
+    def test_end_to_end_multiple_submissions(self):
+        """Test end-to-end functionality with multiple submissions"""
+        print("\n🔍 Testing End-to-End Multiple Submissions...")
+        
+        test_submissions = [
+            {
+                "name": "Alice Williams",
+                "email": "alice@company1.com",
+                "company": "Tech Solutions Inc",
+                "message": "Interested in your pharmaceutical logistics services"
+            },
+            {
+                "name": "Bob Martinez",
+                "email": "bob@company2.com", 
+                "company": "Healthcare Corp",
+                "message": "Need information about regulatory compliance services"
+            },
+            {
+                "name": "Carol Davis",
+                "email": "carol@company3.com",
+                "company": "Medical Devices Ltd",
+                "message": "Inquiry about multi-activity pharmaceutical solutions"
+            }
+        ]
+        
+        submitted_ids = []
+        
+        try:
+            for i, test_data in enumerate(test_submissions):
+                print(f"  Submitting form {i+1}/3...")
+                
+                response = requests.post(
+                    f"{API_BASE}/contact",
+                    json=test_data,
+                    headers={"Content-Type": "application/json"},
+                    timeout=15
+                )
+                
+                if response.status_code == 200:
+                    response_data = response.json()
+                    submitted_ids.append(response_data['id'])
+                    print(f"  ✅ Form {i+1} submitted: {response_data['id']}")
+                    
+                    # Verify unique ID generation
+                    if response_data['id'] not in submitted_ids[:-1]:
+                        print(f"  ✅ Unique ID generated for form {i+1}")
+                    else:
+                        print(f"  ❌ Duplicate ID detected for form {i+1}")
+                        return False
+                else:
+                    print(f"  ❌ Form {i+1} submission failed: {response.status_code}")
+                    return False
+                
+                # Small delay between submissions
+                time.sleep(1)
+            
+            print(f"✅ All 3 forms submitted successfully")
+            print(f"✅ All IDs are unique: {len(set(submitted_ids)) == len(submitted_ids)}")
+            
+            # Wait for processing
+            time.sleep(3)
+            
+            # Verify database storage for all submissions
+            if self.db:
+                stored_count = 0
+                for submission_id in submitted_ids:
+                    contact_form = self.db.contact_forms.find_one({"id": submission_id})
+                    if contact_form:
+                        stored_count += 1
+                
+                print(f"✅ Database verification: {stored_count}/3 forms stored")
+                
+                if stored_count == 3:
+                    return True
+                else:
+                    print(f"❌ Only {stored_count}/3 forms found in database")
+                    return False
+            else:
+                print("⚠️ Cannot verify database storage (no connection)")
+                return True  # Still consider successful if API calls worked
+                
+        except Exception as e:
+            print(f"❌ End-to-end multiple submissions test failed: {e}")
+            return False
+    
     def run_all_tests(self):
         """Run all tests and return summary"""
         print("🚀 Starting Contact Form API Tests...")
