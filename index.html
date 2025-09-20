@@ -750,8 +750,17 @@
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
                     <h3 class="contact-form-title">Send us a Message</h3>
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-row">
+
+
+
+
+
+                    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="6d0201ac-b7ab-4578-8a8d-55942c23f612" />
+                        <input type="hidden" name="subject" value="New Contact Form Submission Website" />
+                        <input type="hidden" name="from_name" value="My Website" />
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/index.html#submit-btn">
+                        <div class="form-group-container">
                             <div class="form-group">
                                 <label for="name" class="form-label">Name *</label>
                                 <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
@@ -772,7 +781,7 @@
                             <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Tell us about your requirements..." required></textarea>
                         </div>
 
-                        <button type="submit" class="contact-submit-btn" id="submit-btn">
+                        <button type="submit" class="form-submit" id="submit-btn">
                             <span>Send Message</span>
                             <i data-lucide="send"></i>
                         </button>
