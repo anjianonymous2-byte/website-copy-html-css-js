@@ -201,22 +201,26 @@ const EnhancedWhyChooseUsSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {capabilities.map((capability, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="relative mb-6">
+                <div 
+                  className="relative mb-6"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                >
                   <img 
                     src={capability.images[currentSlide[index] || 0]}
                     alt={`${capability.title} ${(currentSlide[index] || 0) + 1}`}
-                    className="w-full h-48 object-cover rounded-xl"
+                    className="w-full h-48 object-cover rounded-xl transition-all duration-500"
                   />
                   <button 
                     onClick={() => prevSlide(index)}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white hover:opacity-80 transition-all duration-200"
                     style={{ backgroundColor: 'rgba(47, 54, 49, 0.7)' }}
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button 
                     onClick={() => nextSlide(index)}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white hover:opacity-80 transition-all duration-200"
                     style={{ backgroundColor: 'rgba(47, 54, 49, 0.7)' }}
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -225,10 +229,17 @@ const EnhancedWhyChooseUsSection = () => {
                     {capability.images.map((_, imgIndex) => (
                       <div 
                         key={imgIndex}
-                        className={`w-2 h-2 rounded-full ${(currentSlide[index] || 0) === imgIndex ? 'bg-white' : 'bg-white bg-opacity-50'}`}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          (currentSlide[index] || 0) === imgIndex ? 'bg-white' : 'bg-white bg-opacity-50'
+                        }`}
                       />
                     ))}
                   </div>
+                  {isHovered[index] && (
+                    <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
+                      Paused
+                    </div>
+                  )}
                 </div>
                 <h4 className="text-xl font-bold mb-4" style={{ color: '#2f3631' }}>
                   {capability.title}
