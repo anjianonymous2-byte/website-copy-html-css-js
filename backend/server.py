@@ -15,8 +15,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import asyncio
 import httpx
-import gspread
-from google.oauth2.service_account import Credentials
+# Google Sheets integration handled by separate module
 import json
 
 # Configure logging first
