@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIRO MULTI ACTIVITIES - Pharmaceutical Excellence</title>
+    <meta name="description" content="Leading pharmaceutical company delivering high-quality, innovative healthcare solutions. Specializing in cold chain injectable products with stringent temperature control.">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.js" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SPIRO</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <button onclick="scrollToSection('home')" class="nav-link">Home</button>
+                <button onclick="scrollToSection('about')" class="nav-link">About</button>
+                <button onclick="scrollToSection('expertise')" class="nav-link">Expertise</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-nav" class="nav-mobile">
+                <button onclick="scrollToSection('home')" class="nav-link-mobile">Home</button>
+                <button onclick="scrollToSection('about')" class="nav-link-mobile">About</button>
+                <button onclick="scrollToSection('expertise')" class="nav-link-mobile">Expertise</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Geometric Background Elements -->
+        <div class="hero-bg">
+            <div class="bg-shape bg-triangle"></div>
+            <div class="bg-shape bg-rectangle"></div>
+            <div class="bg-shape bg-circle"></div>
+            <div class="bg-shape bg-small-circle"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-icons">
+                <i data-lucide="shield" class="hero-icon green"></i>
+                <i data-lucide="thermometer" class="hero-icon blue"></i>
+            </div>
+            
+            <h1 class="hero-title">
+                Pharmaceutical Excellence
+                <br>
+                <span class="hero-subtitle">with Cold Chain Precision</span>
+            </h1>
+            
+            <p class="hero-description">
+                Leading pharmaceutical company delivering high-quality, innovative healthcare solutions.
+                Specializing in cold chain injectable products with stringent temperature control.
+            </p>
+            
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('expertise')" class="btn btn-primary">
+                    <span>Explore Our Expertise</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number yellow">24/7</div>
+                    <div class="stat-label">Temperature Monitoring</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number green">WHO GDP</div>
+                    <div class="stat-label">Compliant Standards</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number blue">2°C to 8°C</div>
+                    <div class="stat-label">Storage Capabilities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counters Section -->
+    <section class="counters">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-card">
+                    <div class="counter-icon yellow">
+                        <i data-lucide="package"></i>
+                    </div>
+                    <div class="counter-number yellow" data-target="500">0</div>
+                    <div class="counter-label">Pharmaceutical Products</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon green">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="counter-number green" data-target="150">0</div>
+                    <div class="counter-label">Healthcare Professionals</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon blue">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <div class="counter-number blue" data-target="25">0</div>
+                    <div class="counter-label">Years of Excellence</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon yellow">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <div class="counter-number yellow" data-target="15">0</div>
+                    <div class="counter-label">Countries Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About SPIRO MULTI ACTIVITIES</h2>
+                <p class="section-description">
+                    A leading pharmaceutical company committed to delivering high-quality, innovative, and affordable healthcare solutions. 
+                    With a broad portfolio encompassing all therapeutic categories, we specialize in cold chain injectable products.
+                </p>
+            </div>
+
+            <!-- CEO Section -->
+            <div class="ceo-section">
+                <div class="ceo-content">
+                    <div class="ceo-image">
+                        <img src="https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxDRU8lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU4MzgzODY5fDA&ixlib=rb-4.1.0&q=85" alt="CEO of SPIRO MULTI ACTIVITIES">
+                    </div>
+                    <div class="ceo-info">
+                        <div class="ceo-header">
+                            <div class="ceo-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <div>
+                                <h3 class="ceo-name">Dr. Sarah Ahmed</h3>
+                                <p class="ceo-title">CEO & Founder</p>
+                            </div>
+                        </div>
+                        
+                        <p class="ceo-description">
+                            With over 20 years of experience in pharmaceutical excellence, Dr. Sarah Ahmed has led SPIRO MULTI ACTIVITIES 
+                            to become a trusted name in cold chain logistics and pharmaceutical distribution across the region.
+                        </p>
+                        
+                        <div class="ceo-quote">
+                            <i data-lucide="lightbulb" class="quote-icon"></i>
+                            <div>
+                                <p class="quote-text">
+                                    "Excellence in pharmaceutical care is not just about delivering products – it's about preserving life through precision, integrity, and unwavering commitment to quality."
+                                </p>
+                                <p class="quote-author">- Dr. Sarah Ahmed, CEO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ceo-stats">
+                            <div class="ceo-stat">
+                                <div class="ceo-stat-number yellow">PhD</div>
+                                <div class="ceo-stat-label">Pharmaceutical Sciences</div>
+                            </div>
+                            <div class="ceo-stat">
+                                <div class="ceo-stat-number green">20+</div>
+                                <div class="ceo-stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission, Vision, Values -->
+            <div class="mvv-grid">
+                <!-- Mission -->
+                <div class="mvv-card">
+                    <div class="mvv-header">
+                        <div class="mvv-icon yellow">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <h3 class="mvv-title">Our Mission</h3>
+                    </div>
+                    
+                    <img src="https://images.pexels.com/photos/8942118/pexels-photo-8942118.jpeg" alt="Healthcare Mission" class="mvv-image">
+                    
+                    <p class="mvv-description">
+                        To enhance global health by providing top-tier pharmaceutical products, with an emphasis on cold chain logistics and life-saving injectables.
+                    </p>
+                    
+                    <ul class="mvv-list">
+                        <li>Global Health Enhancement</li>
+                        <li>Life-Saving Injectable Focus</li>
+                        <li>Cold Chain Excellence</li>
+                    </ul>
+                </div>
+
+                <!-- Vision -->
+                <div class="mvv-card">
+                    <div class="mvv-header">
+                        <div class="mvv-icon green">
+                            <i data-lucide="eye"></i>
+                        </div>
+                        <h3 class="mvv-title">Our Vision</h3>
+                    </div>
+                    
+                    <img src="https://images.pexels.com/photos/8942119/pexels-photo-8942119.jpeg" alt="Healthcare Vision" class="mvv-image">
+                    
+                    <p class="mvv-description">
+                        To be recognized as a global leader in pharmaceutical distribution, known for our excellence in cold chain management, compliance, and customer-centric approach.
+                    </p>
+                    
+                    <ul class="mvv-list">
+                        <li>Global Leadership</li>
+                        <li>Customer-Centric Excellence</li>
+                        <li>Regulatory Compliance</li>
+                    </ul>
+                </div>
+
+                <!-- Values -->
+                <div class="mvv-card">
+                    <div class="mvv-header">
+                        <div class="mvv-icon blue">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <h3 class="mvv-title">Our Values</h3>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1618479955358-5f8e5ab7d630?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMHByb2R1Y3RzfGVufDB8fHx8MTc1ODM4Mzg4MHww&ixlib=rb-4.1.0&q=85" alt="Healthcare Values" class="mvv-image">
+                    
+                    <p class="mvv-description">
+                        Ensuring safe, effective, and timely access to critical medications through stringent quality control and temperature management.
+                    </p>
+                    
+                    <ul class="mvv-list">
+                        <li>Patient Safety First</li>
+                        <li>Quality Excellence</li>
+                        <li>Integrity & Trust</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Expertise</h2>
+                <p class="section-description">
+                    Three pillars of excellence that define our pharmaceutical leadership
+                </p>
+            </div>
+
+            <div class="expertise-sections">
+                <!-- Cold Chain Injectable Products -->
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <div class="expertise-icon blue">
+                            <i data-lucide="snowflake"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h3 class="expertise-title">Cold Chain Injectable Products</h3>
+                            <p class="expertise-subtitle">Specialized handling of temperature-sensitive medications</p>
+                        </div>
+                    </div>
+                    
+                    <p class="expertise-description">
+                        We specialize in handling, storing, and distributing temperature-sensitive injectable medications. 
+                        Our facilities are equipped with state-of-the-art cold storage systems, and our logistics partners 
+                        follow strict protocols to maintain product integrity from manufacturer to end-user.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature">
+                            <div class="feature-icon blue">
+                                <i data-lucide="thermometer"></i>
+                            </div>
+                            <span>2°C to 8°C and -20°C storage capabilities</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon yellow">
+                                <i data-lucide="monitor"></i>
+                            </div>
+                            <span>24/7 temperature monitoring and alerts</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon green">
+                                <i data-lucide="truck"></i>
+                            </div>
+                            <span>Validated cold chain logistics</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon blue">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <span>WHO GDP & GMP compliant handling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Pharmaceutical Range -->
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <div class="expertise-icon yellow">
+                            <i data-lucide="package"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h3 class="expertise-title">Comprehensive Pharmaceutical Range</h3>
+                            <p class="expertise-subtitle">Wide variety across all therapeutic areas</p>
+                        </div>
+                    </div>
+                    
+                    <p class="expertise-description">
+                        While our core expertise lies in cold chain injectables, we also offer a wide variety of 
+                        pharmaceutical products across therapeutic areas.
+                    </p>
+
+                    <div class="therapeutic-grid">
+                        <div class="therapeutic-card">
+                            <img src="https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Antibiotics and antivirals">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="pill"></i>
+                                    </div>
+                                    <h4>Antibiotics and antivirals</h4>
+                                </div>
+                                <p>Advanced antimicrobial and antiviral medications</p>
+                            </div>
+                        </div>
+
+                        <div class="therapeutic-card">
+                            <img src="https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Cardiovascular medications">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="heart"></i>
+                                    </div>
+                                    <h4>Cardiovascular medications</h4>
+                                </div>
+                                <p>Heart health and circulatory system treatments</p>
+                            </div>
+                        </div>
+
+                        <div class="therapeutic-card">
+                            <img src="https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg" alt="Oncology drugs">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="activity"></i>
+                                    </div>
+                                    <h4>Oncology drugs</h4>
+                                </div>
+                                <p>Cancer treatment and chemotherapy medications</p>
+                            </div>
+                        </div>
+
+                        <div class="therapeutic-card">
+                            <img src="https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg" alt="Diabetes and endocrine treatments">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="stethoscope"></i>
+                                    </div>
+                                    <h4>Diabetes and endocrine treatments</h4>
+                                </div>
+                                <p>Diabetes management and hormonal treatments</p>
+                            </div>
+                        </div>
+
+                        <div class="therapeutic-card">
+                            <img src="https://images.unsplash.com/photo-1610188660497-c925bf086373?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="OTC products">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="pill"></i>
+                                    </div>
+                                    <h4>OTC (Over-The-Counter) products</h4>
+                                </div>
+                                <p>Non-prescription healthcare products</p>
+                            </div>
+                        </div>
+
+                        <div class="therapeutic-card">
+                            <img src="https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Vitamins and supplements">
+                            <div class="therapeutic-content">
+                                <div class="therapeutic-header">
+                                    <div class="therapeutic-icon green">
+                                        <i data-lucide="tablet"></i>
+                                    </div>
+                                    <h4>Vitamins and supplements</h4>
+                                </div>
+                                <p>Nutritional supplements and vitamins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regulatory Compliance -->
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <div class="expertise-icon green">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h3 class="expertise-title">Regulatory Compliance & Quality Assurance</h3>
+                            <p class="expertise-subtitle">Maintaining the highest standards with trusted certifications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="compliance-content">
+                        <div class="compliance-text">
+                            <p>
+                                We maintain the highest standards of quality control and regulatory compliance. All our products and 
+                                processes adhere to WHO-GDP, GMP, and relevant national drug authority guidelines to ensure product 
+                                safety and efficacy.
+                            </p>
+                            
+                            <div class="badges">
+                                <span class="badge yellow">WHO GDP</span>
+                                <span class="badge green">GMP Certified</span>
+                                <span class="badge blue">ISO 9001</span>
+                                <span class="badge yellow">FDA Approved</span>
+                                <span class="badge green">EU GMP</span>
+                            </div>
+                        </div>
+                        
+                        <div class="compliance-image">
+                            <img src="https://images.unsplash.com/photo-1641748182997-f9745e9a0348?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNlcnRpZmljYXRpb258ZW58MHx8fHwxNzU4MzkwNjQ2fDA&ixlib=rb-4.1.0&q=85" alt="Quality Certifications">
+                            <div class="compliance-badge">
+                                <img src="https://images.unsplash.com/photo-1613825787302-22acac0de2fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHx0cnVzdCUyMGJhZGdlcyUyMGNlcnRpZmljYXRpb258ZW58MHx8fHwxNzU4MzkwNjQwfDA&ixlib=rb-4.1.0&q=85" alt="Compliance Badge">
+                                <p>Internationally Certified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose SPIRO MULTI ACTIVITIES?</h2>
+                <p class="section-description">
+                    Nine compelling reasons that make us the preferred pharmaceutical partner worldwide
+                </p>
+            </div>
+
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon blue">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <h3>Specialized in Cold Chain Injectables</h3>
+                    <p>Industry-leading expertise in temperature-sensitive pharmaceutical storage and distribution</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon yellow">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <h3>Fully Compliant with Global Regulatory Standards</h3>
+                    <p>WHO GDP, GMP, and FDA compliance ensuring highest quality and safety standards</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon green">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3>End-to-End Supply Chain Integrity</h3>
+                    <p>Complete supply chain management from manufacturer to end-user with full traceability</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon blue">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h3>Wide Distribution Network</h3>
+                    <p>Extensive network covering 15+ countries with reliable delivery infrastructure</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon yellow">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Experienced Pharmaceutical Professionals</h3>
+                    <p>150+ qualified healthcare professionals with decades of combined industry experience</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon green">
+                        <i data-lucide="handshake"></i>
+                    </div>
+                    <h3>Flexible B2B and B2C Solutions</h3>
+                    <p>Customized solutions for hospitals, clinics, pharmacies, and individual healthcare needs</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon blue">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3>Industry Recognition & Awards</h3>
+                    <p>Multiple awards for excellence in pharmaceutical distribution and cold chain management</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon yellow">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>24/7 Emergency Support</h3>
+                    <p>Round-the-clock support for critical pharmaceutical needs and emergency deliveries</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon green">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Advanced Security & Tracking</h3>
+                    <p>State-of-the-art security systems and real-time tracking for all pharmaceutical shipments</p>
+                </div>
+            </div>
+
+            <!-- Facilities and Capabilities with Image Carousel -->
+            <div class="facilities">
+                <h3 class="facilities-title">Our Facilities and Capabilities</h3>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-carousel" data-carousel="0">
+                            <div class="carousel-container">
+                                <img src="https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Cold Chain Warehouse 1" class="carousel-image active">
+                                <img src="https://images.unsplash.com/photo-1601912552080-0fb89fd08042?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85" alt="Cold Chain Warehouse 2" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg" alt="Cold Chain Warehouse 3" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/1624694/pexels-photo-1624694.jpeg" alt="Cold Chain Warehouse 4" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Cold Chain Warehouse 5" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeSlide(0, -1)">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next" onclick="changeSlide(0, 1)">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(0, 0)"></span>
+                                <span class="dot" onclick="currentSlide(0, 1)"></span>
+                                <span class="dot" onclick="currentSlide(0, 2)"></span>
+                                <span class="dot" onclick="currentSlide(0, 3)"></span>
+                                <span class="dot" onclick="currentSlide(0, 4)"></span>
+                            </div>
+                            <div class="pause-indicator" style="display: none;">Paused</div>
+                        </div>
+                        <h4>Cold Chain Warehouses</h4>
+                        <p>Equipped with refrigerated zones, backup power, and real-time tracking</p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-carousel" data-carousel="1">
+                            <div class="carousel-container">
+                                <img src="https://images.unsplash.com/photo-1610289472743-de6966e12a3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85" alt="Distribution Fleet 1" class="carousel-image active">
+                                <img src="https://images.pexels.com/photos/615670/pexels-photo-615670.jpeg" alt="Distribution Fleet 2" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Distribution Fleet 3" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg" alt="Distribution Fleet 4" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1610188660497-c925bf086373?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Distribution Fleet 5" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeSlide(1, -1)">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next" onclick="changeSlide(1, 1)">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(1, 0)"></span>
+                                <span class="dot" onclick="currentSlide(1, 1)"></span>
+                                <span class="dot" onclick="currentSlide(1, 2)"></span>
+                                <span class="dot" onclick="currentSlide(1, 3)"></span>
+                                <span class="dot" onclick="currentSlide(1, 4)"></span>
+                            </div>
+                            <div class="pause-indicator" style="display: none;">Paused</div>
+                        </div>
+                        <h4>Distribution Fleet</h4>
+                        <p>Temperature-controlled vehicles with validated transport routes</p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-carousel" data-carousel="2">
+                            <div class="carousel-container">
+                                <img src="https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg" alt="Packaging Solutions 1" class="carousel-image active">
+                                <img src="https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Packaging Solutions 2" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/1624694/pexels-photo-1624694.jpeg" alt="Packaging Solutions 3" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Packaging Solutions 4" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/615670/pexels-photo-615670.jpeg" alt="Packaging Solutions 5" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeSlide(2, -1)">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next" onclick="changeSlide(2, 1)">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(2, 0)"></span>
+                                <span class="dot" onclick="currentSlide(2, 1)"></span>
+                                <span class="dot" onclick="currentSlide(2, 2)"></span>
+                                <span class="dot" onclick="currentSlide(2, 3)"></span>
+                                <span class="dot" onclick="currentSlide(2, 4)"></span>
+                            </div>
+                            <div class="pause-indicator" style="display: none;">Paused</div>
+                        </div>
+                        <h4>Packaging Solutions</h4>
+                        <p>GDP-compliant insulated packaging and passive cooling systems</p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-carousel" data-carousel="3">
+                            <div class="carousel-container">
+                                <img src="https://images.unsplash.com/photo-1601912552080-0fb89fd08042?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85" alt="Monitoring Systems 1" class="carousel-image active">
+                                <img src="https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg" alt="Monitoring Systems 2" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1610289472743-de6966e12a3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85" alt="Monitoring Systems 3" class="carousel-image">
+                                <img src="https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg" alt="Monitoring Systems 4" class="carousel-image">
+                                <img src="https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85" alt="Monitoring Systems 5" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeSlide(3, -1)">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next" onclick="changeSlide(3, 1)">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(3, 0)"></span>
+                                <span class="dot" onclick="currentSlide(3, 1)"></span>
+                                <span class="dot" onclick="currentSlide(3, 2)"></span>
+                                <span class="dot" onclick="currentSlide(3, 3)"></span>
+                                <span class="dot" onclick="currentSlide(3, 4)"></span>
+                            </div>
+                            <div class="pause-indicator" style="display: none;">Paused</div>
+                        </div>
+                        <h4>Monitoring Systems</h4>
+                        <p>IoT-enabled temperature loggers and comprehensive audit trails</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients & Partnerships -->
+            <div class="clients">
+                <h3 class="clients-title">Clients & Partnerships</h3>
+                <p class="clients-description">Trusted by leading healthcare organizations worldwide</p>
+                
+                <div class="clients-scroll">
+                    <div class="clients-track">
+                        <div class="client-logo">MediCorp</div>
+                        <div class="client-logo">HealthPlus</div>
+                        <div class="client-logo">PharmaCare</div>
+                        <div class="client-logo">VitalMed</div>
+                        <div class="client-logo">CurePharma</div>
+                        <div class="client-logo">LifeScience</div>
+                        <div class="client-logo">BioHealth</div>
+                        <div class="client-logo">MedSupply</div>
+                        <div class="client-logo">HealthTech</div>
+                        <div class="client-logo">PharmaLink</div>
+                        <!-- Duplicate for infinite scroll -->
+                        <div class="client-logo">MediCorp</div>
+                        <div class="client-logo">HealthPlus</div>
+                        <div class="client-logo">PharmaCare</div>
+                        <div class="client-logo">VitalMed</div>
+                        <div class="client-logo">CurePharma</div>
+                        <div class="client-logo">LifeScience</div>
+                        <div class="client-logo">BioHealth</div>
+                        <div class="client-logo">MedSupply</div>
+                        <div class="client-logo">HealthTech</div>
+                        <div class="client-logo">PharmaLink</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">S</div>
+                        <span class="footer-logo-text">SPIRO MULTI ACTIVITIES</span>
+                    </div>
+                    <p class="footer-description">
+                        Leading pharmaceutical company committed to delivering high-quality, innovative, and affordable healthcare solutions. 
+                        Specializing in cold chain injectable products with stringent temperature control.
+                    </p>
+                    <div class="footer-badges">
+                        <div class="footer-badge yellow">GDP</div>
+                        <div class="footer-badge green">GMP</div>
+                        <div class="footer-badge blue">WHO</div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <button onclick="scrollToSection('about')" class="footer-link">About Us</button>
+                        <button onclick="scrollToSection('expertise')" class="footer-link">Our Expertise</button>
+                        <button class="footer-link">Cold Chain Solutions</button>
+                        <button class="footer-link">Quality Assurance</button>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="footer-contacts">
+                        <div class="footer-contact">
+                            <i data-lucide="map-pin" class="contact-icon yellow"></i>
+                            <span>Sudan, Khartoum Al Souq Al Arabi</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i data-lucide="phone" class="contact-icon green"></i>
+                            <div>
+                                <div>+249912577478</div>
+                                <div>+249100077079</div>
+                            </div>
+                        </div>
+                        <div class="footer-contact">
+                            <i data-lucide="mail" class="contact-icon blue"></i>
+                            <span>info@spiromultiactivities.com</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i data-lucide="globe" class="contact-icon yellow"></i>
+                            <span>spiro.multiactivity.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 SPIRO MULTI ACTIVITIES CO. LTD. All rights reserved.
+                </p>
+                <div class="footer-bottom-text">
+                    <span>WHO GDP Compliant</span>
+                    <span>•</span>
+                    <span>GMP Standards</span>
+                    <span>•</span>
+                    <span>24/7 Cold Chain</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
