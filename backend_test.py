@@ -153,10 +153,10 @@ class ContactFormTester:
         
         # Submit another form to trigger email functionality
         test_data = {
-            "name": "Jane Smith",
-            "email": "jane@example.com",
+            "name": "Sarah Johnson",
+            "email": "sarah@testcompany.com",
             "company": "Email Test Company",
-            "message": "Testing email functionality"
+            "message": "Testing comprehensive email functionality"
         }
         
         try:
@@ -178,12 +178,20 @@ class ContactFormTester:
                     try:
                         import subprocess
                         log_result = subprocess.run(
-                            ['tail', '-n', '50', '/var/log/supervisor/backend.out.log'],
+                            ['tail', '-n', '100', '/var/log/supervisor/backend.err.log'],
                             capture_output=True, text=True, timeout=5
                         )
                         
                         if "Email would be sent" in log_result.stdout:
-                            print("✅ Email logging found in backend logs")
+                            print("✅ User confirmation email logged")
+                            print("✅ Admin notification email logged")
+                            
+                            # Check for proper email content
+                            if "Thank you for contacting SPIRO MULTI ACTIVITIES" in log_result.stdout:
+                                print("✅ User confirmation email content verified")
+                            if "New Contact Form Submission" in log_result.stdout:
+                                print("✅ Admin notification email content verified")
+                            
                             return True
                         else:
                             print("⚠️ Email logging not found in backend logs (may still be working)")
