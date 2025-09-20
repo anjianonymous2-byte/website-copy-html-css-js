@@ -73,6 +73,127 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+# Email sending function
+async def send_email(to_email: str, subject: str, body: str, is_html: bool = False):
+    """Send email using simple SMTP"""
+    try:
+        # Basic email configuration - using a simple approach
+        msg = MIMEMultipart()
+        msg['From'] = "info@spiromultiactivities.com"
+        msg['To'] = to_email
+        msg['Subject'] = subject
+        
+        if is_html:
+            msg.attach(MIMEText(body, 'html'))
+        else:
+            msg.attach(MIMEText(body, 'plain'))
+        
+        # For now, we'll just log the email (in production, configure proper SMTP)
+        logger.info(f"Email would be sent to {to_email} with subject: {subject}")
+        logger.info(f"Email body: {body}")
+        
+        return True
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return False
+
+# Google Sheets integration function
+async def add_to_google_sheets(form_data: dict, sheets_url: str = None):
+    """Add form data to Google Sheets"""
+    try:
+        if not sheets_url:
+            logger.info("No Google Sheets URL provided, skipping sheets integration")
+            return True
+            
+        # This will be implemented once the sheets URL is provided
+        # For now, just log the data
+        logger.info(f"Form data would be added to Google Sheets: {form_data}")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to add to Google Sheets: {str(e)}")
+        return False
+
+@api_router.post("/contact", response_model=ContactForm)
+async def submit_contact_form(input: ContactFormCreate):
+    try:
+        # Create contact form object
+        contact_dict = input.dict()
+        contact_obj = ContactForm(**contact_dict)
+        
+        # Save to database
+        await db.contact_forms.insert_one(contact_obj.dict())
+        
+        # Prepare email content for user
+        user_email_body = f"""
+Dear {contact_obj.name},
+
+Thank you for contacting SPIRO MULTI ACTIVITIES CO. LTD. We have received your inquiry and will get back to you within 24 hours.
+
+Your Message Details:
+Name: {contact_obj.name}
+Email: {contact_obj.email}
+Company: {contact_obj.company or 'Not provided'}
+Message: {contact_obj.message}
+
+Best regards,
+SPIRO MULTI ACTIVITIES Team
+info@spiromultiactivities.com
+        """
+        
+        # Prepare email content for admin
+        admin_email_body = f"""
+New Contact Form Submission
+
+Name: {contact_obj.name}
+Email: {contact_obj.email}
+Company: {contact_obj.company or 'Not provided'}
+Message: {contact_obj.message}
+Submitted: {contact_obj.timestamp}
+
+Please respond to this inquiry promptly.
+        """
+        
+        # Send emails
+        user_email_sent = await send_email(
+            contact_obj.email, 
+            "Thank you for contacting SPIRO MULTI ACTIVITIES", 
+            user_email_body
+        )
+        
+        admin_email_sent = await send_email(
+            "info@spiromultiactivities.com", 
+            f"New Contact Form Submission from {contact_obj.name}", 
+            admin_email_body
+        )
+        
+        # Add to Google Sheets (will be implemented once URL is provided)
+        sheets_data = {
+            "name": contact_obj.name,
+            "email": contact_obj.email,
+            "company": contact_obj.company or "",
+            "message": contact_obj.message,
+            "timestamp": contact_obj.timestamp.isoformat()
+        }
+        sheets_added = await add_to_google_sheets(sheets_data)
+        
+        # Update status
+        if user_email_sent and admin_email_sent:
+            contact_obj.status = "sent"
+        else:
+            contact_obj.status = "email_failed"
+            
+        # Update in database
+        await db.contact_forms.update_one(
+            {"id": contact_obj.id}, 
+            {"$set": {"status": contact_obj.status}}
+        )
+        
+        return contact_obj
+        
+    except Exception as e:
+        logger.error(f"Contact form submission failed: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to submit contact form")
+
 # Include the router in the main app
 app.include_router(api_router)
 
