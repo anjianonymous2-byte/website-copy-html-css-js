@@ -134,9 +134,9 @@ async def add_to_google_sheets(form_data: dict):
     """Add form data to Google Sheets using gspread"""
     try:
         # Load service account credentials
-        creds_path = os.environ.get('GOOGLE_SERVICE_ACCOUNT_FILE')
+        creds_path = os.environ.get('GOOGLE_SERVICE_ACCOUNT_KEY_PATH')
         if not creds_path:
-            logger.warning("Google Sheets integration disabled: GOOGLE_SERVICE_ACCOUNT_FILE not set")
+            logger.warning("Google Sheets integration disabled: GOOGLE_SERVICE_ACCOUNT_KEY_PATH not set")
             return False
             
         # Define the scope
@@ -148,9 +148,9 @@ async def add_to_google_sheets(form_data: dict):
         client = gspread.authorize(creds)
         
         # Open the spreadsheet
-        sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+        sheet_id = os.environ.get('GOOGLE_SHEETS_ID')
         if not sheet_id:
-            logger.warning("Google Sheets integration disabled: GOOGLE_SHEET_ID not set")
+            logger.warning("Google Sheets integration disabled: GOOGLE_SHEETS_ID not set")
             return False
             
         sheet = client.open_by_key(sheet_id).sheet1
