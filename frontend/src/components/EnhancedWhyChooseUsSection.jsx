@@ -115,17 +115,50 @@ const EnhancedWhyChooseUsSection = () => {
     "LifeScience", "BioHealth", "MedSupply", "HealthTech", "PharmaLink"
   ];
 
+  // Auto-sliding functionality for image carousels
+  useEffect(() => {
+    capabilities.forEach((_, capabilityIndex) => {
+      if (!isHovered[capabilityIndex]) {
+        intervalRefs.current[capabilityIndex] = setInterval(() => {
+          setCurrentSlide(prev => ({
+            ...prev,
+            [capabilityIndex]: ((prev[capabilityIndex] || 0) + 1) % capabilities[capabilityIndex].images.length
+          }));
+        }, 5000); // 5 seconds interval
+      }
+    });
+
+    return () => {
+      Object.values(intervalRefs.current).forEach(interval => {
+        if (interval) clearInterval(interval);
+      });
+    };
+  }, [isHovered, capabilities]);
+
+  const handleMouseEnter = (capabilityIndex) => {
+    setIsHovered(prev => ({ ...prev, [capabilityIndex]: true }));
+    if (intervalRefs.current[capabilityIndex]) {
+      clearInterval(intervalRefs.current[capabilityIndex]);
+    }
+  };
+
+  const handleMouseLeave = (capabilityIndex) => {
+    setIsHovered(prev => ({ ...prev, [capabilityIndex]: false }));
+  };
+
   const nextSlide = (capabilityIndex) => {
     setCurrentSlide(prev => ({
       ...prev,
-      [capabilityIndex]: (prev[capabilityIndex] || 0) + 1 >= capabilities[capabilityIndex].images.length ? 0 : (prev[capabilityIndex] || 0) + 1
+      [capabilityIndex]: ((prev[capabilityIndex] || 0) + 1) % capabilities[capabilityIndex].images.length
     }));
   };
 
   const prevSlide = (capabilityIndex) => {
     setCurrentSlide(prev => ({
       ...prev,
-      [capabilityIndex]: (prev[capabilityIndex] || 0) <= 0 ? capabilities[capabilityIndex].images.length - 1 : (prev[capabilityIndex] || 0) - 1
+      [capabilityIndex]: (prev[capabilityIndex] || 0) <= 0 
+        ? capabilities[capabilityIndex].images.length - 1 
+        : (prev[capabilityIndex] || 0) - 1
     }));
   };
 
