@@ -15,7 +15,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import asyncio
 import httpx
-from google_sheets_integration import sheets_integrator
+import gspread
+from google.oauth2.service_account import Credentials
+import json
 
 # Configure logging first
 logging.basicConfig(
@@ -106,9 +108,44 @@ async def send_email(to_email: str, subject: str, body: str, is_html: bool = Fal
 
 # Google Sheets integration function  
 async def add_to_google_sheets(form_data: dict):
-    """Add form data to Google Sheets using the integrated approach"""
+    """Add form data to Google Sheets using gspread"""
     try:
-        return await sheets_integrator.append_row(form_data)
+        # Load service account credentials
+        creds_path = os.environ.get('GOOGLE_SERVICE_ACCOUNT_FILE')
+        if not creds_path:
+            logger.warning("Google Sheets integration disabled: GOOGLE_SERVICE_ACCOUNT_FILE not set")
+            return False
+            
+        # Define the scope
+        scope = ['https://spreadsheets.google.com/feeds',
+                'https://www.googleapis.com/auth/drive']
+        
+        # Load credentials
+        creds = Credentials.from_service_account_file(creds_path, scopes=scope)
+        client = gspread.authorize(creds)
+        
+        # Open the spreadsheet
+        sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+        if not sheet_id:
+            logger.warning("Google Sheets integration disabled: GOOGLE_SHEET_ID not set")
+            return False
+            
+        sheet = client.open_by_key(sheet_id).sheet1
+        
+        # Prepare row data
+        row = [
+            form_data.get('name', ''),
+            form_data.get('email', ''),
+            form_data.get('company', ''),
+            form_data.get('message', ''),
+            str(form_data.get('timestamp', ''))
+        ]
+        
+        # Append the row
+        sheet.append_row(row)
+        logger.info("✅ Successfully added data to Google Sheets")
+        return True
+        
     except Exception as e:
         logger.error(f"❌ Google Sheets integration failed: {str(e)}")
         return False
