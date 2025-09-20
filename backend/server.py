@@ -15,6 +15,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import asyncio
 import httpx
+from google_sheets_integration import sheets_integrator
 
 # Configure logging first
 logging.basicConfig(
