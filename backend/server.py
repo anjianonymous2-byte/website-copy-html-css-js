@@ -220,13 +220,13 @@ Please respond to this inquiry promptly.
             admin_email_body
         )
         
-        # Add to Google Sheets (will be implemented once URL is provided)
+        # Add to Google Sheets
         sheets_data = {
             "name": contact_obj.name,
             "email": contact_obj.email,
             "company": contact_obj.company or "",
             "message": contact_obj.message,
-            "timestamp": contact_obj.timestamp.isoformat()
+            "timestamp": contact_obj.timestamp
         }
         sheets_added = await add_to_google_sheets(sheets_data)
         
