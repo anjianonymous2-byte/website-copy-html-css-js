@@ -215,13 +215,13 @@ const EnhancedExpertiseSection = () => {
               
               <div className="text-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1613825787641-2dbbd4f96a1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxjZXJ0aWZpY2F0aW9uJTIwYmFkZ2VzfGVufDB8fHx8MTc1ODM4MzkwM3ww&ixlib=rb-4.1.0&q=85"
+                  src="https://images.unsplash.com/photo-1641748182997-f9745e9a0348?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNlcnRpZmljYXRpb258ZW58MHx8fHwxNzU4MzkwNjQ2fDA&ixlib=rb-4.1.0&q=85"
                   alt="Quality Certifications"
                   className="w-full h-64 object-cover rounded-2xl shadow-lg"
                 />
                 <div className="mt-6 p-4 rounded-xl" style={{ backgroundColor: '#fefee2' }}>
                   <img 
-                    src="https://images.pexels.com/photos/11035385/pexels-photo-11035385.jpeg"
+                    src="https://images.unsplash.com/photo-1613825787302-22acac0de2fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHx0cnVzdCUyMGJhZGdlcyUyMGNlcnRpZmljYXRpb258ZW58MHx8fHwxNzU4MzkwNjQwfDA&ixlib=rb-4.1.0&q=85"
                     alt="Compliance Badge"
                     className="w-20 h-20 object-contain mx-auto mb-3"
                   />
