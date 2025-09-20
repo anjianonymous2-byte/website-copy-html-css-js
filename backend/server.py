@@ -106,66 +106,11 @@ async def send_email(to_email: str, subject: str, body: str, is_html: bool = Fal
 
 # Google Sheets integration function  
 async def add_to_google_sheets(form_data: dict):
-    """Add form data to Google Sheets using webhook/API approach"""
+    """Add form data to Google Sheets using the integrated approach"""
     try:
-        # For immediate implementation, we'll use the CSV approach and provide manual instructions
-        # Later this can be enhanced with proper Google Sheets API integration
-        
-        import csv
-        import os
-        from datetime import datetime
-        
-        csv_file = '/tmp/spiro_contact_forms.csv'
-        
-        # Check if file exists to write header
-        file_exists = os.path.exists(csv_file)
-        
-        with open(csv_file, 'a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            
-            # Write header if file is new
-            if not file_exists:
-                writer.writerow(['Timestamp', 'Name', 'Email', 'Company', 'Message', 'Status'])
-            
-            # Format timestamp
-            timestamp = form_data.get('timestamp')
-            if isinstance(timestamp, datetime):
-                timestamp_str = timestamp.strftime('%Y-%m-%d %H:%M:%S')
-            else:
-                timestamp_str = str(timestamp)
-            
-            # Write the data
-            writer.writerow([
-                timestamp_str,
-                form_data.get('name', ''),
-                form_data.get('email', ''),
-                form_data.get('company', ''),
-                form_data.get('message', ''),
-                'Submitted'
-            ])
-        
-        logger.info(f"✅ Contact form data saved to CSV: {csv_file}")
-        logger.info(f"📊 Data ready for Google Sheets import:")
-        logger.info(f"   - Name: {form_data.get('name')}")
-        logger.info(f"   - Email: {form_data.get('email')}")
-        logger.info(f"   - Company: {form_data.get('company')}")
-        logger.info(f"   - Message: {form_data.get('message')[:50]}...")
-        
-        # Also try a direct HTTP approach to Google Sheets (if permissions allow)
-        try:
-            async with httpx.AsyncClient() as client:
-                # This would require the spreadsheet to be set up as a Google Form
-                # For now, we'll just log the attempt
-                logger.info("📋 Google Sheets integration: Data logged for manual import")
-                logger.info("📋 Sheet URL: https://docs.google.com/spreadsheets/d/1ch7hZPHH9mVVeO2dMU54LGn6miSUu6mXWcNfM_QkDys/edit")
-                
-        except Exception as http_e:
-            logger.warning(f"Direct Google Sheets API attempt failed: {http_e}")
-        
-        return True
-        
+        return await sheets_integrator.append_row(form_data)
     except Exception as e:
-        logger.error(f"❌ Failed to process Google Sheets integration: {str(e)}")
+        logger.error(f"❌ Google Sheets integration failed: {str(e)}")
         return False
 
 @api_router.post("/contact", response_model=ContactForm)
