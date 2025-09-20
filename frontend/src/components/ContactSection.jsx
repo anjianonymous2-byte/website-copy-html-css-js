@@ -197,26 +197,6 @@ const ContactSection = () => {
 
               <div>
                 <label className="block text-sm font-medium mb-2" style={{ color: '#2f3631' }}>
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-200"
-                  style={{ 
-                    borderColor: '#f8d041',
-                    backgroundColor: '#fefee2',
-                    color: '#2f3631'
-                  }}
-                  placeholder="How can we help you?"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: '#2f3631' }}>
                   Message *
                 </label>
                 <textarea
