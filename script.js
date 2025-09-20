@@ -410,4 +410,108 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Contact Form Functionality
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            message: formData.get('message')
+        };
+        
+        // Validate required fields
+        if (!data.name || !data.email || !data.message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Sending...</span>';
+        
+        try {
+            // Simulate form submission (since this is a static website)
+            // In a real implementation, you would send this to your backend
+            await simulateFormSubmission(data);
+            
+            // Show success message
+            showNotification('Message sent successfully! We will get back to you within 24 hours.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showNotification('Failed to send message. Please try again or contact us directly.', 'error');
+        } finally {
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Send Message</span><i data-lucide="send"></i>';
+            lucide.createIcons(); // Re-initialize icons
+        }
+    });
+}
+
+// Simulate form submission for demo purposes
+async function simulateFormSubmission(data) {
+    return new Promise((resolve) => {
+        // Simulate network delay
+        setTimeout(() => {
+            console.log('Form submitted with data:', data);
+            resolve();
+        }, 1500);
+    });
+}
+
+// Show notification function
+function showNotification(message, type = 'success') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    // Hide notification after 5 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 5000);
+}
+
+// Initialize contact form when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing initialization code runs first
+    initContactForm();
+});
+
 console.log('SPIRO MULTI ACTIVITIES website loaded successfully! 🚀');
