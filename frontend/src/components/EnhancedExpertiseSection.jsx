@@ -29,37 +29,37 @@ const EnhancedExpertiseSection = () => {
     {
       name: "Antibiotics and antivirals",
       icon: <Pill className="w-8 h-8" />,
-      image: "https://images.pexels.com/photos/9742906/pexels-photo-9742906.jpeg",
+      image: "https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
       description: "Advanced antimicrobial and antiviral medications"
     },
     {
       name: "Cardiovascular medications",
       icon: <Heart className="w-8 h-8" />,
-      image: "https://images.pexels.com/photos/3683073/pexels-photo-3683073.jpeg",
+      image: "https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
       description: "Heart health and circulatory system treatments"
     },
     {
       name: "Oncology drugs",
       icon: <Activity className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1618479955358-5f8e5ab7d630?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMHByb2R1Y3RzfGVufDB8fHx8MTc1ODM4Mzg4MHww&ixlib=rb-4.1.0&q=85",
+      image: "https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg",
       description: "Cancer treatment and chemotherapy medications"
     },
     {
       name: "Diabetes and endocrine treatments",
       icon: <Stethoscope className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1618479964200-56cd8a8dd2b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMHByb2R1Y3RzfGVufDB8fHx8MTc1ODM4Mzg4MHww&ixlib=rb-4.1.0&q=85",
+      image: "https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg",
       description: "Diabetes management and hormonal treatments"
     },
     {
       name: "OTC (Over-The-Counter) products",
       icon: <Pill className="w-8 h-8" />,
-      image: "https://images.pexels.com/photos/9742906/pexels-photo-9742906.jpeg",
+      image: "https://images.unsplash.com/photo-1610188660497-c925bf086373?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
       description: "Non-prescription healthcare products"
     },
     {
       name: "Vitamins and supplements",
       icon: <Tablet className="w-8 h-8" />,
-      image: "https://images.pexels.com/photos/3683073/pexels-photo-3683073.jpeg",
+      image: "https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
       description: "Nutritional supplements and vitamins"
     }
   ];
