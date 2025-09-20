@@ -84,11 +84,19 @@ async def get_status_checks():
 
 # Email sending function
 async def send_email(to_email: str, subject: str, body: str, is_html: bool = False):
-    """Send email using simple SMTP"""
+    """Send email using SMTP (simple hosting mail approach)"""
     try:
-        # Basic email configuration - using a simple approach
+        # Get SMTP configuration from environment
+        smtp_server = os.environ.get('SMTP_SERVER', 'localhost')
+        smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+        smtp_use_tls = os.environ.get('SMTP_USE_TLS', 'true').lower() == 'true'
+        smtp_username = os.environ.get('SMTP_USERNAME')
+        smtp_password = os.environ.get('SMTP_PASSWORD')
+        from_email = os.environ.get('FROM_EMAIL', 'info@spiromultiactivities.com')
+        
+        # Create message
         msg = MIMEMultipart()
-        msg['From'] = "info@spiromultiactivities.com"
+        msg['From'] = from_email
         msg['To'] = to_email
         msg['Subject'] = subject
         
@@ -97,13 +105,28 @@ async def send_email(to_email: str, subject: str, body: str, is_html: bool = Fal
         else:
             msg.attach(MIMEText(body, 'plain'))
         
-        # For now, we'll just log the email (in production, configure proper SMTP)
-        logger.info(f"Email would be sent to {to_email} with subject: {subject}")
-        logger.info(f"Email body: {body}")
+        # Send email
+        if smtp_username and smtp_password:
+            # Use authenticated SMTP
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                if smtp_use_tls:
+                    server.starttls()
+                server.login(smtp_username, smtp_password)
+                server.send_message(msg)
+                logger.info(f"✅ Email sent successfully to {to_email}")
+        else:
+            # Use local mail server (like WordPress hosting)
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                server.send_message(msg)
+                logger.info(f"✅ Email sent via local mail server to {to_email}")
         
         return True
+        
     except Exception as e:
-        logger.error(f"Failed to send email: {str(e)}")
+        logger.error(f"❌ Failed to send email to {to_email}: {str(e)}")
+        # Fallback: log email details for manual processing
+        logger.info(f"📧 EMAIL FALLBACK - To: {to_email}, Subject: {subject}")
+        logger.info(f"📧 EMAIL BODY: {body}")
         return False
 
 # Google Sheets integration function  
