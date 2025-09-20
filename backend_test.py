@@ -18,7 +18,7 @@ from pymongo import MongoClient
 import os
 
 # Configuration
-BASE_URL = "https://779547a2-c3f4-471d-978f-48b2f380c124.preview.emergentagent.com"
+BASE_URL = "https://form-fix-7.preview.emergentagent.com"
 API_BASE = f"{BASE_URL}/api"
 MONGO_URL = "mongodb://localhost:27017"
 DB_NAME = "spiro_db"
