@@ -4,7 +4,7 @@
 
 A modern, professional website for SPIRO MULTI ACTIVITIES pharmaceutical company built with React.js and FastAPI. This website showcases pharmaceutical expertise, cold chain logistics, and comprehensive healthcare solutions.
 
-![Website Preview](https://via.placeholder.com/800x400/f8d041/2f3631?text=SPIRO+MULTI+ACTIVITIES+Website)
+![Website Preview]([https://via.placeholder.com/800x400/f8d041/2f3631?text=SPIRO+MULTI+ACTIVITIES+Website](https://pharmalogistics.preview.emergentagent.com/))
 
 ## 🌟 Features
 
