@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import ExpertiseSection from "../components/ExpertiseSection";
-import WhyChooseUsSection from "../components/WhyChooseUsSection";
+import CountersSection from "../components/CountersSection";
+import EnhancedAboutSection from "../components/EnhancedAboutSection";
+import EnhancedExpertiseSection from "../components/EnhancedExpertiseSection";
+import EnhancedWhyChooseUsSection from "../components/EnhancedWhyChooseUsSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
