@@ -1,7 +1,317 @@
 # Here are your Instructions
 
+# SPIRO MULTI ACTIVITIES - Modern Pharmaceutical Website
 
-Action: 'file_editor create /app/README.md --file-text # SPIRO MULTI ACTIVITIES - Modern Pharmaceutical Website\n\nA modern, professional website for SPIRO MULTI ACTIVITIES pharmaceutical company built with React.js and FastAPI. This website showcases pharmaceutical expertise, cold chain logistics, and comprehensive healthcare solutions.\n\n![Website Preview](https://via.placeholder.com/800x400/f8d041/2f3631?text=SPIRO+MULTI+ACTIVITIES+Website)\n\n## 🌟 Features\n\n- **Modern Design**: Clean, professional pharmaceutical industry design\n- **Responsive**: Works perfectly on desktop, tablet, and mobile devices\n- **Interactive Elements**: \n  - Image sliders for facility showcases\n  - Infinite scrolling client logos\n  - Smooth navigation and animations\n- **Professional Sections**:\n  - Hero section with geometric design elements\n  - Statistics counters (products, employees, experience)\n  - CEO profile with motivational quotes\n  - Mission, Vision & Values with images\n  - Product categories with icons and descriptions\n  - Regulatory compliance badges\n  - Facilities showcase with image carousels\n  - Contact form (currently with mock data)\n\n## 🎨 Brand Colors Used\n\n- **Background**: #fefee2 (Light cream)\n- **Primary**: #f8d041 (Golden yellow)\n- **Secondary**: #23ec6f (Vibrant green)\n- **Tertiary**: #44ddf5 (Sky blue)\n- **Text**: #2f3631 (Dark green)\n\n## 📋 Prerequisites\n\nBefore you begin, make sure you have the following installed on your computer:\n\n### For Windows Users:\n1. **Node.js** (version 16 or higher)\n   - Download from: https://nodejs.org/\n   - Choose the "LTS" version (recommended)\n   - Run the installer and follow the setup wizard\n\n2. **Python** (version 3.8 or higher)\n   - Download from: https://www.python.org/downloads/\n   - **IMPORTANT**: During installation, check "Add Python to PATH"\n\n3. **Git** (for downloading the project)\n   - Download from: https://git-scm.com/download/win\n   - Use default settings during installation\n\n### For Mac Users:\n1. **Node.js**: Download from https://nodejs.org/\n2. **Python**: Usually pre-installed, or download from https://www.python.org/\n3. **Git**: Usually pre-installed, or download from https://git-scm.com/\n\n### For Linux Users:\n```bash\n# Ubuntu/Debian\nsudo apt update\nsudo apt install nodejs npm python3 python3-pip git\n\n# CentOS/RHEL\nsudo yum install nodejs npm python3 python3-pip git\n```\n\n## 🚀 Installation & Setup\n\n### Step 1: Download the Project\n\n1. **Option A: Download ZIP**\n   - Click the green "Code" button on GitHub\n   - Select "Download ZIP"\n   - Extract the ZIP file to your desired location\n\n2. **Option B: Using Git (Recommended)**\n   ```bash\n   git clone https://github.com/yourusername/spiro-pharmaceutical-website.git\n   cd spiro-pharmaceutical-website\n   ```\n\n### Step 2: Open Terminal/Command Prompt\n\n**For Windows:**\n- Press `Windows Key + R`\n- Type `cmd` and press Enter\n- Navigate to your project folder: `cd path\\to\\your\\project`\n\n**For Mac/Linux:**\n- Press `Cmd + Space` (Mac) or `Ctrl + Alt + T` (Linux)\n- Navigate to your project folder: `cd path/to/your/project`\n\n### Step 3: Install Frontend Dependencies\n\n```bash\n# Navigate to frontend folder\ncd frontend\n\n# Install required packages (this may take a few minutes)\nnpm install\n# OR if you have yarn installed\nyarn install\n```\n\n### Step 4: Install Backend Dependencies\n\n```bash\n# Go back to main folder\ncd ..\n\n# Navigate to backend folder\ncd backend\n\n# Install Python packages\npip install -r requirements.txt\n```\n\n## 🏃\u200d♂️ Running the Website\n\n### Method 1: Run Both Frontend and Backend Separately\n\n**Terminal 1 - Start the Backend:**\n```bash\ncd backend\npython -m uvicorn server:app --host 0.0.0.0 --port 8001 --reload\n```\n\n**Terminal 2 - Start the Frontend:**\n```bash\ncd frontend\nnpm start\n# OR\nyarn start\n```\n\n### Method 2: Using the Provided Scripts (if available)\n\n```bash\n# Start both frontend and backend together\nnpm run dev\n```\n\n## 🌐 Accessing Your Website\n\nAfter running the commands above:\n\n1. **Frontend**: Open your web browser and go to `http://localhost:3000`\n2. **Backend API**: Available at `http://localhost:8001`\n\nYou should see the SPIRO MULTI ACTIVITIES website loading in your browser!\n\n## 📁 Project Structure\n\n```\nspiro-pharmaceutical-website/\n├── frontend/                 # React.js frontend application\n│   ├── public/              # Static files\n│   ├── src/\n│   │   ├── components/      # Reusable UI components\n│   │   │   ├── Header.jsx\n│   │   │   ├── HeroSection.jsx\n│   │   │   ├── CountersSection.jsx\n│   │   │   ├── EnhancedAboutSection.jsx\n│   │   │   ├── EnhancedExpertiseSection.jsx\n│   │   │   ├── EnhancedWhyChooseUsSection.jsx\n│   │   │   ├── ContactSection.jsx\n│   │   │   └── Footer.jsx\n│   │   ├── pages/           # Main pages\n│   │   ├── hooks/           # Custom React hooks\n│   │   └── App.js           # Main application file\n│   ├── package.json         # Frontend dependencies\n│   └── tailwind.config.js   # Styling configuration\n├── backend/                 # FastAPI backend application\n│   ├── server.py           # Main backend server\n│   ├── requirements.txt    # Python dependencies\n│   └── .env                # Environment variables\n└── README.md               # This file\n```\n\n## 🛠️ Customization Guide\n\n### Changing Company Information\n\n1. **Company Details**: Edit `/frontend/src/components/EnhancedAboutSection.jsx`\n2. **Contact Information**: Edit `/frontend/src/components/ContactSection.jsx` and `/frontend/src/components/Footer.jsx`\n3. **CEO Information**: Edit `/frontend/src/components/EnhancedAboutSection.jsx` (CEO section)\n\n### Changing Colors\n\n1. Open any component file (e.g., `/frontend/src/components/HeroSection.jsx`)\n2. Look for `style={{ backgroundColor: \'#f8d041\' }}` or similar\n3. Replace the color codes with your preferred colors:\n   - `#fefee2` - Background color\n   - `#f8d041` - Primary (yellow)\n   - `#23ec6f` - Secondary (green)\n   - `#44ddf5` - Tertiary (blue)\n   - `#2f3631` - Text color\n\n### Adding Your Own Images\n\n1. **CEO Image**: Replace the image URL in `/frontend/src/components/EnhancedAboutSection.jsx`\n2. **Product Images**: Edit the `therapeuticAreas` array in `/frontend/src/components/EnhancedExpertiseSection.jsx`\n3. **Facility Images**: Edit the `capabilities` array in `/frontend/src/components/EnhancedWhyChooseUsSection.jsx`\n\n### Changing Statistics/Counters\n\nEdit `/frontend/src/components/CountersSection.jsx` and modify the `counters` array:\n\n```javascript\nconst counters = [\n  {\n    icon: <Package className="w-8 h-8" />,\n    number: "YOUR_NUMBER",\n    label: "YOUR_LABEL",\n    color: \'#f8d041\'\n  },\n  // Add more counters...\n];\n```\n\n## 🔧 Troubleshooting\n\n### Common Issues:\n\n**Issue 1: "npm is not recognized" or "node is not found"**\n- **Solution**: Reinstall Node.js and make sure to restart your terminal\n\n**Issue 2: "python is not recognized"**\n- **Solution**: Reinstall Python and check "Add Python to PATH" during installation\n\n**Issue 3: Port already in use**\n- **Solution**: \n  ```bash\n  # Kill processes using the ports\n  # Windows:\n  netstat -ano | findstr :3000\n  taskkill /PID [PID_NUMBER] /F\n  \n  # Mac/Linux:\n  lsof -ti:3000 | xargs kill -9\n  ```\n\n**Issue 4: Website not loading**\n- Check if both frontend and backend are running\n- Make sure you\'re accessing `http://localhost:3000`\n- Check the terminal for any error messages\n\n**Issue 5: Images not displaying**\n- Check your internet connection (images are loaded from external URLs)\n- Replace image URLs with local images if needed\n\n### Getting Help:\n\n1. **Check the terminal output** for error messages\n2. **Restart both frontend and backend** servers\n3. **Clear browser cache** (Ctrl+F5 or Cmd+Shift+R)\n4. **Check that all dependencies are installed** correctly\n\n## 📸 Screenshots\n\n### Desktop View\n- Hero Section with geometric design\n- Statistics counters showing company metrics\n- CEO profile with professional image\n- Mission, Vision & Values with healthcare images\n- Product categories with icons and descriptions\n- Interactive facility image sliders\n- Infinite scrolling client logos\n\n### Mobile View\n- Responsive design that works on all screen sizes\n- Mobile-friendly navigation menu\n- Optimized images and content layout\n\n## 🚀 Deployment (Advanced)\n\nTo deploy this website to the internet, you can use services like:\n\n1. **Vercel** (Recommended for beginners)\n2. **Netlify**\n3. **Heroku**\n4. **AWS**\n\nDetailed deployment instructions would be provided separately for advanced users.\n\n## 📞 Support & Contact\n\nIf you need help or have questions:\n\n1. **Create an issue** on the GitHub repository\n2. **Check the troubleshooting section** above\n3. **Contact the development team** at your email\n\n## 📝 License\n\nThis project is created for SPIRO MULTI ACTIVITIES pharmaceutical company. All rights reserved.\n\n---\n\n## 🎯 Quick Start Checklist\n\n- [ ] Install Node.js\n- [ ] Install Python\n- [ ] Download/clone the project\n- [ ] Run `npm install` in the frontend folder\n- [ ] Run `pip install -r requirements.txt` in the backend folder\n- [ ] Start the backend server\n- [ ] Start the frontend server\n- [ ] Open `http://localhost:3000` in your browser\n- [ ] Enjoy your pharmaceutical website!\n\n---\n\n**Made with ❤️ for SPIRO MULTI ACTIVITIES**\n\n*Last updated: July 2025*'
-Observation: ERROR:
-File already exists at: /app/README.md. Cannot overwrite files using command `create`.
+A modern, professional website for SPIRO MULTI ACTIVITIES pharmaceutical company built with React.js and FastAPI. This website showcases pharmaceutical expertise, cold chain logistics, and comprehensive healthcare solutions.
 
+![Website Preview](https://via.placeholder.com/800x400/f8d041/2f3631?text=SPIRO+MULTI+ACTIVITIES+Website)
+
+## 🌟 Features
+
+- **Modern Design**: Clean, professional pharmaceutical industry design
+- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
+- **Interactive Elements**: 
+  - Image sliders for facility showcases
+  - Infinite scrolling client logos
+  - Smooth navigation and animations
+- **Professional Sections**:
+  - Hero section with geometric design elements
+  - Statistics counters (products, employees, experience)
+  - CEO profile with motivational quotes
+  - Mission, Vision & Values with images
+  - Product categories with icons and descriptions
+  - Regulatory compliance badges
+  - Facilities showcase with image carousels
+  - Contact form (currently with mock data)
+
+## 🎨 Brand Colors Used
+
+- **Background**: #fefee2 (Light cream)
+- **Primary**: #f8d041 (Golden yellow)
+- **Secondary**: #23ec6f (Vibrant green)
+- **Tertiary**: #44ddf5 (Sky blue)
+- **Text**: #2f3631 (Dark green)
+
+## 📋 Prerequisites
+
+Before you begin, make sure you have the following installed on your computer:
+
+### For Windows Users:
+1. **Node.js** (version 16 or higher)
+   - Download from: https://nodejs.org/
+   - Choose the "LTS" version (recommended)
+   - Run the installer and follow the setup wizard
+
+2. **Python** (version 3.8 or higher)
+   - Download from: https://www.python.org/downloads/
+   - **IMPORTANT**: During installation, check "Add Python to PATH"
+
+3. **Git** (for downloading the project)
+   - Download from: https://git-scm.com/download/win
+   - Use default settings during installation
+
+### For Mac Users:
+1. **Node.js**: Download from https://nodejs.org/
+2. **Python**: Usually pre-installed, or download from https://www.python.org/
+3. **Git**: Usually pre-installed, or download from https://git-scm.com/
+
+### For Linux Users:
+```bash
+# Ubuntu/Debian
+sudo apt update
+sudo apt install nodejs npm python3 python3-pip git
+
+# CentOS/RHEL
+sudo yum install nodejs npm python3 python3-pip git
+```
+
+## 🚀 Installation & Setup
+
+### Step 1: Download the Project
+
+1. **Option A: Download ZIP**
+   - Click the green "Code" button on GitHub
+   - Select "Download ZIP"
+   - Extract the ZIP file to your desired location
+
+2. **Option B: Using Git (Recommended)**
+   ```bash
+   git clone https://github.com/yourusername/spiro-pharmaceutical-website.git
+   cd spiro-pharmaceutical-website
+   ```
+
+### Step 2: Open Terminal/Command Prompt
+
+**For Windows:**
+- Press `Windows Key + R`
+- Type `cmd` and press Enter
+- Navigate to your project folder: `cd path\	o\\your\\project`
+
+**For Mac/Linux:**
+- Press `Cmd + Space` (Mac) or `Ctrl + Alt + T` (Linux)
+- Navigate to your project folder: `cd path/to/your/project`
+
+### Step 3: Install Frontend Dependencies
+
+```bash
+# Navigate to frontend folder
+cd frontend
+
+# Install required packages (this may take a few minutes)
+npm install
+# OR if you have yarn installed
+yarn install
+```
+
+### Step 4: Install Backend Dependencies
+
+```bash
+# Go back to main folder
+cd ..
+
+# Navigate to backend folder
+cd backend
+
+# Install Python packages
+pip install -r requirements.txt
+```
+
+## 🏃\u200d♂️ Running the Website
+
+### Method 1: Run Both Frontend and Backend Separately
+
+**Terminal 1 - Start the Backend:**
+```bash
+cd backend
+python -m uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+```
+
+**Terminal 2 - Start the Frontend:**
+```bash
+cd frontend
+npm start
+# OR
+yarn start
+```
+
+### Method 2: Using the Provided Scripts (if available)
+
+```bash
+# Start both frontend and backend together
+npm run dev
+```
+
+## 🌐 Accessing Your Website
+
+After running the commands above:
+
+1. **Frontend**: Open your web browser and go to `http://localhost:3000`
+2. **Backend API**: Available at `http://localhost:8001`
+
+You should see the SPIRO MULTI ACTIVITIES website loading in your browser!
+
+## 📁 Project Structure
+
+```
+spiro-pharmaceutical-website/
+├── frontend/                 # React.js frontend application
+│   ├── public/              # Static files
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   │   ├── Header.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── CountersSection.jsx
+│   │   │   ├── EnhancedAboutSection.jsx
+│   │   │   ├── EnhancedExpertiseSection.jsx
+│   │   │   ├── EnhancedWhyChooseUsSection.jsx
+│   │   │   ├── ContactSection.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── pages/           # Main pages
+│   │   ├── hooks/           # Custom React hooks
+│   │   └── App.js           # Main application file
+│   ├── package.json         # Frontend dependencies
+│   └── tailwind.config.js   # Styling configuration
+├── backend/                 # FastAPI backend application
+│   ├── server.py           # Main backend server
+│   ├── requirements.txt    # Python dependencies
+│   └── .env                # Environment variables
+└── README.md               # This file
+```
+
+## 🛠️ Customization Guide
+
+### Changing Company Information
+
+1. **Company Details**: Edit `/frontend/src/components/EnhancedAboutSection.jsx`
+2. **Contact Information**: Edit `/frontend/src/components/ContactSection.jsx` and `/frontend/src/components/Footer.jsx`
+3. **CEO Information**: Edit `/frontend/src/components/EnhancedAboutSection.jsx` (CEO section)
+
+### Changing Colors
+
+1. Open any component file (e.g., `/frontend/src/components/HeroSection.jsx`)
+2. Look for `style={{ backgroundColor: '#f8d041' }}` or similar
+3. Replace the color codes with your preferred colors:
+   - `#fefee2` - Background color
+   - `#f8d041` - Primary (yellow)
+   - `#23ec6f` - Secondary (green)
+   - `#44ddf5` - Tertiary (blue)
+   - `#2f3631` - Text color
+
+### Adding Your Own Images
+
+1. **CEO Image**: Replace the image URL in `/frontend/src/components/EnhancedAboutSection.jsx`
+2. **Product Images**: Edit the `therapeuticAreas` array in `/frontend/src/components/EnhancedExpertiseSection.jsx`
+3. **Facility Images**: Edit the `capabilities` array in `/frontend/src/components/EnhancedWhyChooseUsSection.jsx`
+
+### Changing Statistics/Counters
+
+Edit `/frontend/src/components/CountersSection.jsx` and modify the `counters` array:
+
+```javascript
+const counters = [
+  {
+    icon: <Package className="w-8 h-8" />,
+    number: "YOUR_NUMBER",
+    label: "YOUR_LABEL",
+    color: '#f8d041'
+  },
+  // Add more counters...
+];
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues:
+
+**Issue 1: "npm is not recognized" or "node is not found"**
+- **Solution**: Reinstall Node.js and make sure to restart your terminal
+
+**Issue 2: "python is not recognized"**
+- **Solution**: Reinstall Python and check "Add Python to PATH" during installation
+
+**Issue 3: Port already in use**
+- **Solution**: 
+  ```bash
+  # Kill processes using the ports
+  # Windows:
+  netstat -ano | findstr :3000
+  taskkill /PID [PID_NUMBER] /F
+  
+  # Mac/Linux:
+  lsof -ti:3000 | xargs kill -9
+  ```
+
+**Issue 4: Website not loading**
+- Check if both frontend and backend are running
+- Make sure you're accessing `http://localhost:3000`
+- Check the terminal for any error messages
+
+**Issue 5: Images not displaying**
+- Check your internet connection (images are loaded from external URLs)
+- Replace image URLs with local images if needed
+
+### Getting Help:
+
+1. **Check the terminal output** for error messages
+2. **Restart both frontend and backend** servers
+3. **Clear browser cache** (Ctrl+F5 or Cmd+Shift+R)
+4. **Check that all dependencies are installed** correctly
+
+## 📸 Screenshots
+
+### Desktop View
+- Hero Section with geometric design
+- Statistics counters showing company metrics
+- CEO profile with professional image
+- Mission, Vision & Values with healthcare images
+- Product categories with icons and descriptions
+- Interactive facility image sliders
+- Infinite scrolling client logos
+
+### Mobile View
+- Responsive design that works on all screen sizes
+- Mobile-friendly navigation menu
+- Optimized images and content layout
+
+## 🚀 Deployment (Advanced)
+
+To deploy this website to the internet, you can use services like:
+
+1. **Vercel** (Recommended for beginners)
+2. **Netlify**
+3. **Heroku**
+4. **AWS**
+
+Detailed deployment instructions would be provided separately for advanced users.
+
+## 📞 Support & Contact
+
+If you need help or have questions:
+
+1. **Create an issue** on the GitHub repository
+2. **Check the troubleshooting section** above
+3. **Contact the development team** at your email
+
+## 📝 License
+
+This project is created for SPIRO MULTI ACTIVITIES pharmaceutical company. All rights reserved.
+
+---
+
+## 🎯 Quick Start Checklist
+
+- [ ] Install Node.js
+- [ ] Install Python
+- [ ] Download/clone the project
+- [ ] Run `npm install` in the frontend folder
+- [ ] Run `pip install -r requirements.txt` in the backend folder
+- [ ] Start the backend server
+- [ ] Start the frontend server
+- [ ] Open `http://localhost:3000` in your browser
+- [ ] Enjoy your pharmaceutical website!
+
+---
+
+**Made with ❤️ for SPIRO MULTI ACTIVITIES**
+
+*Last updated: July 2025*
