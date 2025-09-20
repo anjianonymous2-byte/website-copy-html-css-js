@@ -7,7 +7,6 @@ const ContactSection = () => {
     name: '',
     email: '',
     company: '',
-    subject: '',
     message: ''
   });
 
