@@ -13,9 +13,10 @@ const HomePage = () => {
     <div className="min-h-screen" style={{ backgroundColor: '#fefee2' }}>
       <Header />
       <HeroSection />
-      <AboutSection />
-      <ExpertiseSection />
-      <WhyChooseUsSection />
+      <CountersSection />
+      <EnhancedAboutSection />
+      <EnhancedExpertiseSection />
+      <EnhancedWhyChooseUsSection />
       <ContactSection />
       <Footer />
     </div>
