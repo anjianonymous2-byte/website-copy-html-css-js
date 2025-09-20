@@ -308,26 +308,26 @@ const debouncedScrollHandler = debounce(() => {
 window.addEventListener('scroll', debouncedScrollHandler);
 
 // Error handling for images
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const images = document.querySelectorAll('img');
     
-    images.forEach(img => {
-        img.addEventListener('error', function() {
-            // Hide broken images gracefully
-            this.style.display = 'none';
-            console.warn('Failed to load image:', this.src);
-        });
+//     images.forEach(img => {
+//         img.addEventListener('error', function() {
+//             // Hide broken images gracefully
+//             this.style.display = 'none';
+//             console.warn('Failed to load image:', this.src);
+//         });
         
-        img.addEventListener('load', function() {
-            // Fade in loaded images
-            this.style.opacity = '1';
-            this.style.transition = 'opacity 0.3s ease-in-out';
-        });
+//         img.addEventListener('load', function() {
+//             // Fade in loaded images
+//             this.style.opacity = '1';
+//             this.style.transition = 'opacity 0.3s ease-in-out';
+//         });
         
-        // Set initial opacity for smooth loading
-        img.style.opacity = '0';
-    });
-});
+//         // Set initial opacity for smooth loading
+//         img.style.opacity = '0';
+//     });
+// });
 
 // Preload critical images
 function preloadImages() {
@@ -418,7 +418,7 @@ function initContactForm() {
     if (!contactForm) return;
     
     contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         
         // Get form data
         const formData = new FormData(this);
@@ -449,13 +449,13 @@ function initContactForm() {
         try {
             // Simulate form submission (since this is a static website)
             // In a real implementation, you would send this to your backend
-            await simulateFormSubmission(data);
+            // await simulateFormSubmission(data);
             
             // Show success message
             showNotification('Message sent successfully! We will get back to you within 24 hours.', 'success');
             
             // Reset form
-            contactForm.reset();
+            // contactForm.reset();
             
         } catch (error) {
             console.error('Form submission error:', error);
@@ -470,17 +470,19 @@ function initContactForm() {
 }
 
 // Simulate form submission for demo purposes
-async function simulateFormSubmission(data) {
-    return new Promise((resolve) => {
-        // Simulate network delay
-        setTimeout(() => {
-            console.log('Form submitted with data:', data);
-            resolve();
-        }, 1500);
-    });
-}
+// async function simulateFormSubmission(data) {
+//     return new Promise((resolve) => {
+//         // Simulate network delay
+//         setTimeout(() => {
+//             console.log('Form submitted with data:', data);
+//             resolve();
+//         }, 1500);
+//     });
+// }
+
 
 // Show notification function
+
 function showNotification(message, type = 'success') {
     // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
