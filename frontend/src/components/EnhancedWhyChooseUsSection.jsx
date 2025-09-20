@@ -263,11 +263,11 @@ const EnhancedWhyChooseUsSection = () => {
           
           {/* Infinite Scrolling Client Logos */}
           <div className="overflow-hidden">
-            <div className="flex animate-scroll">
+            <div className="flex animate-scroll-slow hover:animate-scroll-pause">
               {[...clientLogos, ...clientLogos].map((client, index) => (
                 <div 
                   key={index}
-                  className="flex-shrink-0 mx-8 px-6 py-3 rounded-lg font-semibold text-lg"
+                  className="flex-shrink-0 mx-8 px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105"
                   style={{ 
                     backgroundColor: '#fefee2',
                     color: '#2f3631',
