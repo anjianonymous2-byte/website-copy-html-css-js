@@ -114,7 +114,7 @@ class ContactFormTester:
         """Test if contact form data is stored in MongoDB"""
         print("\n🔍 Testing Database Storage...")
         
-        if not self.db:
+        if self.db is None:
             print("❌ No database connection available")
             return False
         
