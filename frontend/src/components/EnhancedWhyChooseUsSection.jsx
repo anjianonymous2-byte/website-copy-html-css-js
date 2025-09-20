@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { CheckCircle, Building2, Users, Globe, Settings, Handshake, ChevronLeft, ChevronRight, Award, Clock, Shield } from "lucide-react";
 
 const EnhancedWhyChooseUsSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState({});
+  const [isHovered, setIsHovered] = useState({});
+  const intervalRefs = useRef({});
 
   const reasons = [
     {
