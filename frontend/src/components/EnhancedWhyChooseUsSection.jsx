@@ -68,44 +68,44 @@ const EnhancedWhyChooseUsSection = () => {
       title: "Cold Chain Warehouses",
       description: "Equipped with refrigerated zones, backup power, and real-time tracking",
       images: [
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg",
-        "https://images.unsplash.com/photo-1619070284836-e850273d69ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg",
-        "https://images.unsplash.com/photo-1609759909743-9c50b81f5ac0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg"
+        "https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1601912552080-0fb89fd08042?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg",
+        "https://images.pexels.com/photos/1624694/pexels-photo-1624694.jpeg",
+        "https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85"
       ]
     },
     {
       title: "Distribution Fleet",
       description: "Temperature-controlled vehicles with validated transport routes",
       images: [
-        "https://images.unsplash.com/photo-1619070284836-e850273d69ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg",
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg",
-        "https://images.unsplash.com/photo-1609759909743-9c50b81f5ac0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg"
+        "https://images.unsplash.com/photo-1610289472743-de6966e12a3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/615670/pexels-photo-615670.jpeg",
+        "https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg",
+        "https://images.unsplash.com/photo-1610188660497-c925bf086373?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85"
       ]
     },
     {
       title: "Packaging Solutions",
       description: "GDP-compliant insulated packaging and passive cooling systems",
       images: [
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg",
-        "https://images.unsplash.com/photo-1609759909743-9c50b81f5ac0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg",
-        "https://images.unsplash.com/photo-1619070284836-e850273d69ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg"
+        "https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg",
+        "https://images.unsplash.com/photo-1584308878768-57d3387b1882?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/1624694/pexels-photo-1624694.jpeg",
+        "https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/615670/pexels-photo-615670.jpeg"
       ]
     },
     {
       title: "Monitoring Systems",
       description: "IoT-enabled temperature loggers and comprehensive audit trails",
       images: [
-        "https://images.unsplash.com/photo-1609759909743-9c50b81f5ac0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg",
-        "https://images.unsplash.com/photo-1619070284836-e850273d69ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGZhY2lsaXR5fGVufDB8fHx8MTc1ODM4Mzg5MHww&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8442382/pexels-photo-8442382.jpeg",
-        "https://images.pexels.com/photos/8442545/pexels-photo-8442545.jpeg"
+        "https://images.unsplash.com/photo-1601912552080-0fb89fd08042?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/6075005/pexels-photo-6075005.jpeg",
+        "https://images.unsplash.com/photo-1610289472743-de6966e12a3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxsb2dpc3RpY3MlMjB3YXJlaG91c2V8ZW58MHx8fGJsdWV8MTc1ODM5MDYwOXww&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg",
+        "https://images.unsplash.com/photo-1703293024077-db8b6da5391c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxwaGFybWFjZXV0aWNhbCUyMGNvbGQlMjBjaGFpbnxlbnwwfHx8Ymx1ZXwxNzU4MzkwNjA0fDA&ixlib=rb-4.1.0&q=85"
       ]
     }
   ];
