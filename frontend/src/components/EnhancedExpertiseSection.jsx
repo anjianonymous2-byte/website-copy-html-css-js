@@ -28,7 +28,7 @@ const EnhancedExpertiseSection = () => {
   const therapeuticAreas = [
     {
       name: "Antibiotics and antivirals",
-      icon: <Pills className="w-8 h-8" />,
+      icon: <Pill className="w-8 h-8" />,
       image: "https://images.pexels.com/photos/9742906/pexels-photo-9742906.jpeg",
       description: "Advanced antimicrobial and antiviral medications"
     },
