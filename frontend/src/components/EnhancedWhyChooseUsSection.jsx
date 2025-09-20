@@ -293,6 +293,15 @@ const EnhancedWhyChooseUsSection = () => {
           animation: scroll 20s linear infinite;
           width: calc(150px * 20 + 64px * 20); /* Approximate width calculation */
         }
+
+        .animate-scroll-slow {
+          animation: scroll 40s linear infinite;
+          width: calc(150px * 20 + 64px * 20); /* Approximate width calculation */
+        }
+
+        .animate-scroll-pause:hover {
+          animation-play-state: paused;
+        }
       `}</style>
     </section>
   );
