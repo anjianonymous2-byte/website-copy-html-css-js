@@ -1062,11 +1062,11 @@ body {
 }
 
 .carousel-btn.prev {
-    left: 0.5rem;
+    left: 1rem;
 }
 
 .carousel-btn.next {
-    right: 0.5rem;
+    right: 1rem;
 }
 
 .carousel-dots {
@@ -1661,7 +1661,6 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-        text-align: center;
     }
 
     .footer-main {
@@ -1669,6 +1668,37 @@ body {
         border-right: none;
         padding-bottom: 2rem;
         border-bottom: 1px solid rgba(47, 54, 49, 0.1);
+        text-align: center;
+    }
+
+    /* Create 2-column layout for Quick Links and Contact Info on mobile */
+    .footer-content .footer-section {
+        text-align: left;
+    }
+
+    .footer-content .footer-section:last-child {
+        text-align: left    ;
+    }
+
+    /* Override the single column layout for the two footer sections */
+    .footer-content {
+        grid-template-areas: 
+            "main main"
+            "links contact";
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-main {
+        grid-area: main;
+    }
+
+    .footer-section:nth-child(2) {
+        grid-area: links;
+    }
+
+    .footer-section:nth-child(3) {
+        grid-area: contact;
     }
 
     .footer-bottom {
@@ -1776,7 +1806,7 @@ body {
     .expertise,
     .why-choose-us,
     .contact-section {
-        padding: 3rem 0;
+        padding: 7rem 0;
     }
 
     /* Typography */
@@ -1984,6 +2014,10 @@ body {
         gap: 1rem;
         margin-top: 0.5rem;
     }
+
+    .footer-badges {
+    justify-content: center;
+    }
 }
 
 /* Extra Small Devices */
@@ -2027,6 +2061,25 @@ body {
     .client-logo {
         min-width: 120px;
         font-size: 0.7rem;
+    }
+
+    /* Footer - revert to single column on very small screens */
+    .footer-content {
+        grid-template-areas: 
+            "main"
+            "links"
+            "contact";
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center !important;
+    }
+
+    .footer-badges {
+    justify-content: center;
     }
 }
 
@@ -2111,6 +2164,10 @@ body {
     overflow: hidden;
 }
 
+.carousel-btn {
+    position: absolute !important;
+}
+
 .btn::before, .nav-link::before, .carousel-btn::before {
     content: '';
     position: absolute;
@@ -2139,7 +2196,6 @@ body {
 .carousel-image {
     pointer-events: none;
     -webkit-user-drag: none;
-    user-drag: none;
 }
 
 .carousel-btn {
@@ -2223,7 +2279,6 @@ img {
     height: auto;
     display: block;
     -webkit-user-drag: none;
-    user-drag: none;
 }
 
 /* Improved loading states */
@@ -2535,6 +2590,10 @@ img {
     .form-submit {
         font-size: 1rem;
         padding: 1rem;
+    }
+
+    .footer-badges {
+    justify-content: center;
     }
 }
 
