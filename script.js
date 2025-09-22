@@ -647,10 +647,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
 });
 
-// Team Carousel Functionality - UPDATED FOR 2 MEMBERS
+// Team Carousel Functionality - FULLY DYNAMIC
 let teamCarouselState = {
     currentSlide: 0,
-    totalSlides: 2, // Changed to 2
+    totalSlides: 0, // Will be set dynamically
     isHovered: false,
     interval: null
 };
@@ -658,6 +658,16 @@ let teamCarouselState = {
 function initTeamCarousel() {
     const teamCarousel = document.querySelector('.team-carousel');
     if (!teamCarousel) return;
+    
+    // DYNAMIC: Count team members automatically
+    const teamData = document.querySelectorAll('.team-slide-data');
+    teamCarouselState.totalSlides = teamData.length;
+    
+    // Don't initialize if no team members
+    if (teamCarouselState.totalSlides === 0) return;
+    
+    // DYNAMIC: Generate dots based on team member count
+    generateTeamDots();
     
     // Initialize first slide
     updateTeamSlide(0);
@@ -705,6 +715,29 @@ function initTeamCarousel() {
     }, { passive: false });
 }
 
+// DYNAMIC: Generate dots based on team member count
+function generateTeamDots() {
+    const dotsContainer = document.querySelector('.team-dots');
+    if (!dotsContainer) return;
+    
+    // Clear existing dots
+    dotsContainer.innerHTML = '';
+    
+    // Generate dots for each team member
+    for (let i = 0; i < teamCarouselState.totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'team-dot';
+        dot.setAttribute('onclick', `goToTeamSlide(${i})`);
+        
+        // Set first dot as active
+        if (i === 0) {
+            dot.classList.add('active');
+        }
+        
+        dotsContainer.appendChild(dot);
+    }
+}
+
 function handleTeamSwipe(startX, endX) {
     const swipeDistance = endX - startX;
     const minSwipeDistance = 50;
@@ -719,6 +752,9 @@ function handleTeamSwipe(startX, endX) {
 }
 
 function startTeamAutoSlide() {
+    // Don't start auto-slide if only one team member
+    if (teamCarouselState.totalSlides <= 1) return;
+    
     if (teamCarouselState.interval) {
         clearInterval(teamCarouselState.interval);
     }
@@ -746,6 +782,7 @@ function showTeamPauseIndicator(show) {
 function changeTeamSlide(direction) {
     let newSlide = teamCarouselState.currentSlide + direction;
     
+    // DYNAMIC: Handle wrapping for any number of slides
     if (newSlide >= teamCarouselState.totalSlides) {
         newSlide = 0;
     } else if (newSlide < 0) {
@@ -756,7 +793,10 @@ function changeTeamSlide(direction) {
 }
 
 function goToTeamSlide(slideIndex) {
-    updateTeamSlide(slideIndex);
+    // DYNAMIC: Validate slide index
+    if (slideIndex >= 0 && slideIndex < teamCarouselState.totalSlides) {
+        updateTeamSlide(slideIndex);
+    }
 }
 
 function updateTeamSlide(slideIndex) {
@@ -768,7 +808,7 @@ function updateTeamSlide(slideIndex) {
     
     if (totalSlides === 0) return;
     
-    // Calculate previous and next slide indices
+    // DYNAMIC: Calculate previous and next slide indices for any number of slides
     const prevIndex = slideIndex === 0 ? totalSlides - 1 : slideIndex - 1;
     const nextIndex = slideIndex === totalSlides - 1 ? 0 : slideIndex + 1;
     
@@ -777,7 +817,7 @@ function updateTeamSlide(slideIndex) {
     updateTeamSlideContent('.team-slide-current', slideIndex);
     updateTeamSlideContent('.team-slide-next', nextIndex);
     
-    // Update dots
+    // DYNAMIC: Update dots for any number of team members
     const dots = document.querySelectorAll('.team-dot');
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === slideIndex);
