@@ -647,10 +647,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
 });
 
-// Team Carousel Functionality
+// Team Carousel Functionality - UPDATED FOR 2 MEMBERS
 let teamCarouselState = {
     currentSlide: 0,
-    totalSlides: 6,
+    totalSlides: 2, // Changed to 2
     isHovered: false,
     interval: null
 };
