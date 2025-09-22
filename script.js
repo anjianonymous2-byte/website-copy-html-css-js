@@ -840,5 +840,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize contact form
     initContactForm();
+});
 
 console.log('SPIRO MULTI ACTIVITIES website loaded successfully! 🚀');
