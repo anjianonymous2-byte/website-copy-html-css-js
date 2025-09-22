@@ -647,4 +647,198 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
 });
 
+// Team Carousel Functionality
+let teamCarouselState = {
+    currentSlide: 0,
+    totalSlides: 6,
+    isHovered: false,
+    interval: null
+};
+
+function initTeamCarousel() {
+    const teamCarousel = document.querySelector('.team-carousel');
+    if (!teamCarousel) return;
+    
+    // Initialize first slide
+    updateTeamSlide(0);
+    
+    // Start auto-slide
+    startTeamAutoSlide();
+    
+    // Mouse events
+    teamCarousel.addEventListener('mouseenter', () => {
+        teamCarouselState.isHovered = true;
+        stopTeamAutoSlide();
+        showTeamPauseIndicator(true);
+    });
+    
+    teamCarousel.addEventListener('mouseleave', () => {
+        teamCarouselState.isHovered = false;
+        startTeamAutoSlide();
+        showTeamPauseIndicator(false);
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    teamCarousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        teamCarouselState.isHovered = true;
+        stopTeamAutoSlide();
+    });
+    
+    teamCarousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleTeamSwipe(touchStartX, touchEndX);
+        
+        // Resume auto-slide after delay
+        setTimeout(() => {
+            teamCarouselState.isHovered = false;
+            startTeamAutoSlide();
+        }, 3000);
+    });
+    
+    // Prevent default touch behavior
+    teamCarousel.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+}
+
+function handleTeamSwipe(startX, endX) {
+    const swipeDistance = endX - startX;
+    const minSwipeDistance = 50;
+    
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+        if (swipeDistance > 0) {
+            changeTeamSlide(-1);
+        } else {
+            changeTeamSlide(1);
+        }
+    }
+}
+
+function startTeamAutoSlide() {
+    if (teamCarouselState.interval) {
+        clearInterval(teamCarouselState.interval);
+    }
+    
+    teamCarouselState.interval = setInterval(() => {
+        if (!teamCarouselState.isHovered) {
+            changeTeamSlide(1);
+        }
+    }, 5000); // 5 seconds auto-slide
+}
+
+function stopTeamAutoSlide() {
+    if (teamCarouselState.interval) {
+        clearInterval(teamCarouselState.interval);
+    }
+}
+
+function showTeamPauseIndicator(show) {
+    const indicator = document.querySelector('.team-pause-indicator');
+    if (indicator) {
+        indicator.style.display = show ? 'flex' : 'none';
+    }
+}
+
+function changeTeamSlide(direction) {
+    let newSlide = teamCarouselState.currentSlide + direction;
+    
+    if (newSlide >= teamCarouselState.totalSlides) {
+        newSlide = 0;
+    } else if (newSlide < 0) {
+        newSlide = teamCarouselState.totalSlides - 1;
+    }
+    
+    updateTeamSlide(newSlide);
+}
+
+function goToTeamSlide(slideIndex) {
+    updateTeamSlide(slideIndex);
+}
+
+function updateTeamSlide(slideIndex) {
+    teamCarouselState.currentSlide = slideIndex;
+    
+    // Get team data
+    const teamData = document.querySelectorAll('.team-slide-data');
+    const totalSlides = teamData.length;
+    
+    if (totalSlides === 0) return;
+    
+    // Calculate previous and next slide indices
+    const prevIndex = slideIndex === 0 ? totalSlides - 1 : slideIndex - 1;
+    const nextIndex = slideIndex === totalSlides - 1 ? 0 : slideIndex + 1;
+    
+    // Update slide content
+    updateTeamSlideContent('.team-slide-prev', prevIndex);
+    updateTeamSlideContent('.team-slide-current', slideIndex);
+    updateTeamSlideContent('.team-slide-next', nextIndex);
+    
+    // Update dots
+    const dots = document.querySelectorAll('.team-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+    });
+}
+
+function updateTeamSlideContent(slideSelector, dataIndex) {
+    const slide = document.querySelector(slideSelector);
+    const teamData = document.querySelectorAll('.team-slide-data')[dataIndex];
+    
+    if (!slide || !teamData) return;
+    
+    const img = teamData.querySelector('img');
+    const h4 = teamData.querySelector('h4');
+    const position = teamData.querySelectorAll('p')[0];
+    const description = teamData.querySelectorAll('p')[1];
+    
+    // Update slide content
+    const slideImg = slide.querySelector('.team-image');
+    const slideName = slide.querySelector('.team-name');
+    const slidePosition = slide.querySelector('.team-position');
+    const slideDescription = slide.querySelector('.team-description');
+    
+    if (slideImg && img) {
+        slideImg.src = img.src;
+        slideImg.alt = img.alt;
+    }
+    
+    if (slideName && h4) {
+        slideName.textContent = h4.textContent;
+    }
+    
+    if (slidePosition && position) {
+        slidePosition.textContent = position.textContent;
+    }
+    
+    if (slideDescription && description) {
+        slideDescription.textContent = description.textContent;
+    }
+}
+
+// Add team carousel to initialization
+document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+    
+    // Initialize counter animation
+    initCounterAnimation();
+    
+    // Initialize carousel functionality
+    initCarousels();
+    
+    // Initialize team carousel
+    initTeamCarousel();
+    
+    // Initialize mobile touch support
+    initTouchSupport();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize contact form
+    initContactForm();
+
 console.log('SPIRO MULTI ACTIVITIES website loaded successfully! 🚀');
